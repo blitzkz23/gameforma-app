@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/drawable/side_nav_bar.xml" value="0.2065" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/layout/activity_main.xml" value="0.21195652173913043" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/layout/content_main.xml" value="0.31614583333333335" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/layout/fragment_gallery.xml" value="0.15312815338042382" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/layout/fragment_home.xml" value="0.15312815338042382" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/layout/fragment_slideshow.xml" value="0.15312815338042382" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/sub1/app/src/main/res/layout/nav_header_main.xml" value="0.15312815338042382" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
