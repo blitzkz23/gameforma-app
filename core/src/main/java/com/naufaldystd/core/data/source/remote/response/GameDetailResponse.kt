@@ -73,20 +73,11 @@ data class GameDetailResponse(
 	@field:SerializedName("name")
 	val name: String,
 
-	@field:SerializedName("updated")
-	val updated: String,
-
-	@field:SerializedName("reviews_count")
-	val reviewsCount: Int,
-
 	@field:SerializedName("description")
 	val description: String,
 
 	@field:SerializedName("alternative_names")
 	val alternativeNames: List<Any>,
-
-	@field:SerializedName("parents_count")
-	val parentsCount: Int,
 
 	@field:SerializedName("creators_count")
 	val creatorsCount: Int,
