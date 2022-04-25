@@ -9,5 +9,5 @@ data class PlatformsItem(
 	val releasedAt: String,
 
 	@field:SerializedName("platform")
-	val platform: Platform
+	val platform: PlatformItem
 )

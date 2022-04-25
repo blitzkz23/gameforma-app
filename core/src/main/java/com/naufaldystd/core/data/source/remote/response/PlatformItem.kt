@@ -3,7 +3,7 @@ package com.naufaldystd.core.data.source.remote.response
 import com.google.gson.annotations.SerializedName
 
 
-data class Platform(
+data class PlatformItem(
 
 	@field:SerializedName("image")
 	val image: Any,

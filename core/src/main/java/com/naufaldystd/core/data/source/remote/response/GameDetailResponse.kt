@@ -49,12 +49,6 @@ data class GameDetailResponse(
 	@field:SerializedName("released")
 	val released: String,
 
-	@field:SerializedName("youtube_count")
-	val youtubeCount: Int,
-
-	@field:SerializedName("movies_count")
-	val moviesCount: Int,
-
 	@field:SerializedName("description_raw")
 	val descriptionRaw: String,
 
@@ -67,20 +61,11 @@ data class GameDetailResponse(
 	@field:SerializedName("tba")
 	val tba: Boolean,
 
-	@field:SerializedName("dominant_color")
-	val dominantColor: String,
-
 	@field:SerializedName("name")
 	val name: String,
 
 	@field:SerializedName("description")
 	val description: String,
-
-	@field:SerializedName("alternative_names")
-	val alternativeNames: List<Any>,
-
-	@field:SerializedName("creators_count")
-	val creatorsCount: Int,
 
 	@field:SerializedName("genres")
 	val genres: List<GenresItem>,
