@@ -1,4 +1,4 @@
-package com.naufaldystd.core.data.source
+package com.naufaldystd.core.data.source.remote
 
 import android.util.Log
 import com.naufaldystd.core.data.source.remote.network.ApiService
