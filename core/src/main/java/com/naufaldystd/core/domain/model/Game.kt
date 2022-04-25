@@ -6,18 +6,11 @@ import com.naufaldystd.core.data.source.remote.response.ShortScreenshotsItem
 import com.naufaldystd.core.data.source.remote.response.TagsItem
 
 data class Game(
+	var gameId: Int,
 	var rating: Double,
 	var playtime: Int,
-	var shortScreenshots: List<ShortScreenshotsItem>,
-	var platforms: List<Platforms>,
-	var ratingTop: Int,
-	var genres: List<Genres>,
-	var id: Int,
-	var ratingsCount: Int,
 	var released: String,
-	var tags: List<Tags>,
 	var backgroundImage: String,
 	var tba: Boolean,
 	var name: String,
-	var clip: Any,
 )

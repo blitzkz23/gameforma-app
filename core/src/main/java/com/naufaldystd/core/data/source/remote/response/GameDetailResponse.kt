@@ -28,9 +28,6 @@ data class GameDetailResponse(
 	@field:SerializedName("rating_top")
 	val ratingTop: Int,
 
-	@field:SerializedName("reviews_text_count")
-	val reviewsTextCount: Int,
-
 	@field:SerializedName("publishers")
 	val publishers: List<PublishersResponse>,
 
@@ -39,9 +36,6 @@ data class GameDetailResponse(
 
 	@field:SerializedName("id")
 	val id: Int,
-
-	@field:SerializedName("ratings_count")
-	val ratingsCount: Int,
 
 	@field:SerializedName("slug")
 	val slug: String,
@@ -70,9 +64,6 @@ data class GameDetailResponse(
 	@field:SerializedName("genres")
 	val genres: List<GenresItem>,
 
-	@field:SerializedName("parent_achievements_count")
-	val parentAchievementsCount: Int,
-
 	@field:SerializedName("website")
 	val website: String,
 
@@ -84,9 +75,6 @@ data class GameDetailResponse(
 
 	@field:SerializedName("screenshots_count")
 	val screenshotsCount: Int,
-
-	@field:SerializedName("clip")
-	val clip: Any
 )
 
 

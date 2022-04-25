@@ -14,11 +14,13 @@ import javax.inject.Singleton
 @Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
+	private val apiKey = "a07a96102d4947b88583c551127a6247"
+
 	suspend fun getAllGame(): Flow<RawgApiResponse<List<GameResponse>>> {
 		// get data from remote api
 		return flow {
 			try {
-				val response = apiService.getGamesList("a07a96102d4947b88583c551127a6247")
+				val response = apiService.getGamesList(apiKey)
 				val dataArray = response.results
 				if(dataArray.isNotEmpty()) {
 					emit(RawgApiResponse.Success(response.results))
