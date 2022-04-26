@@ -18,11 +18,11 @@ interface RawgDao {
 	fun getGameById(id: Int): Flow<GameEntity>?
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	suspend fun insertGames(games: List<GameEntity>)
+	suspend fun insertGameList(games: List<GameEntity>)
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	suspend fun insertGame(game: GameEntity)
 
 	@Update
-	fun updateFavoriteGame(game: GameEntity)
+	fun updateGameData(game: GameEntity)
 }

@@ -15,13 +15,46 @@ import javax.inject.Singleton
 @Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
-	suspend fun getAllGame(): Flow<RawgApiResponse<List<GameResponse>>> {
+	suspend fun getAllGames(): Flow<RawgApiResponse<List<GameResponse>>> {
 		// get data from remote api
 		return flow {
 			try {
 				val response = apiService.getGamesList(API_KEY)
 				val dataArray = response.results
 				if(dataArray.isNotEmpty()) {
+					emit(RawgApiResponse.Success(response.results))
+				} else {
+					emit(RawgApiResponse.Empty)
+				}
+			} catch (e: Exception) {
+				emit(RawgApiResponse.Error(e.toString()))
+				Log.e("RemoteDataSource", e.toString())
+			}
+		}.flowOn(Dispatchers.IO)
+	}
+
+	suspend fun getGameDetail(id: Int): Flow<RawgApiResponse<GameResponse>> {
+		return flow<RawgApiResponse<GameResponse>> {
+			try {
+				val response = apiService.getGameDetail(id.toString(), API_KEY)
+				if (response.descriptionRaw.isNotEmpty()) {
+					emit(RawgApiResponse.Success(response))
+				} else {
+					emit(RawgApiResponse.Empty)
+				}
+			} catch (e: Exception) {
+				emit(RawgApiResponse.Error(e.toString()))
+				Log.e("RemoteDataSource", e.toString())
+			}
+		}.flowOn(Dispatchers.IO)
+	}
+
+	fun searchGame(query: String): Flow<RawgApiResponse<List<GameResponse>>> {
+		return flow {
+			try {
+				val response = apiService.searchGames(query, API_KEY)
+				val dataArray = response.results
+				if (dataArray.isNotEmpty()) {
 					emit(RawgApiResponse.Success(response.results))
 				} else {
 					emit(RawgApiResponse.Empty)

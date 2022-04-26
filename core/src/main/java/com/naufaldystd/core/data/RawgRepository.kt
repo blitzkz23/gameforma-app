@@ -31,7 +31,7 @@ class RawgRepository @Inject constructor(
 				data == null || data.isEmpty()
 
 			override suspend fun createCall(): Flow<RawgApiResponse<List<GameResponse>>> =
-				remoteDataSource.getAllGame()
+				remoteDataSource.getAllGames()
 
 			override suspend fun saveCallResult(data: List<GameResponse>) {
 				val gameList = DataMapper.mapResponseToEntities(data)
@@ -45,8 +45,16 @@ class RawgRepository @Inject constructor(
 		}
 	}
 
+	override fun getGameDetail(id: Int): Flow<Resource<Game>> {
+		TODO("Not yet implemented")
+	}
+
 	override fun setFavoriteGame(game: Game, state: Boolean) {
 		val gameEntity = DataMapper.mapDomainToEntity(game)
 		appExecutors.diskIO().execute { localDataSource.setFavoriteGame(gameEntity, state) }
+	}
+
+	override suspend fun searchGame(query: String): Resource<List<Game>> {
+		TODO("Not yet implemented")
 	}
 }

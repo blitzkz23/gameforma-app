@@ -23,5 +23,5 @@ interface ApiService {
 	suspend fun searchGames(
 		@Query("key") key: String,
 		@Query("search") search: String
-	)
+	): ListGameResponse
 }
