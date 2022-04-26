@@ -18,6 +18,9 @@ data class GameEntity(
 	@ColumnInfo(name = "rating")
 	val rating: Double,
 
+	@ColumnInfo(name = "metacritic")
+	val metacritic: Int,
+
 	@ColumnInfo(name = "description")
 	val description : String,
 

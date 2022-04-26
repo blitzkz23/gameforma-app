@@ -1,6 +1,7 @@
 package com.naufaldystd.core.di
 
 import com.naufaldystd.core.data.source.remote.network.ApiService
+import com.naufaldystd.core.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,7 +28,7 @@ class NetworkModule {
 	@Provides
 	fun provideApiService(client: OkHttpClient): ApiService {
 		val retrofit = Retrofit.Builder()
-			.baseUrl("https://api.rawg.io/api/")
+			.baseUrl(BASE_URL)
 			.addConverterFactory(GsonConverterFactory.create())
 			.client(client)
 			.build()

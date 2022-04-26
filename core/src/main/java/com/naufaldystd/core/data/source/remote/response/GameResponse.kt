@@ -36,9 +36,6 @@ data class GameResponse(
 	@field:SerializedName("platforms")
 	val platforms: List<PlatformsItem>,
 
-	@field:SerializedName("short_screenshots")
-	val shortScreenshots: List<ShortScreenshotsItem>,
-
 	@SerializedName("description_raw")
 	val descriptionRaw: String
 )

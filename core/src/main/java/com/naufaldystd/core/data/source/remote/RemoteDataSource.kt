@@ -4,6 +4,7 @@ import android.util.Log
 import com.naufaldystd.core.data.source.remote.network.ApiService
 import com.naufaldystd.core.data.source.remote.network.RawgApiResponse
 import com.naufaldystd.core.data.source.remote.response.GameResponse
+import com.naufaldystd.core.utils.Constants.API_KEY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,13 +15,11 @@ import javax.inject.Singleton
 @Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 
-	private val apiKey = "a07a96102d4947b88583c551127a6247"
-
 	suspend fun getAllGame(): Flow<RawgApiResponse<List<GameResponse>>> {
 		// get data from remote api
 		return flow {
 			try {
-				val response = apiService.getGamesList(apiKey)
+				val response = apiService.getGamesList(API_KEY)
 				val dataArray = response.results
 				if(dataArray.isNotEmpty()) {
 					emit(RawgApiResponse.Success(response.results))
