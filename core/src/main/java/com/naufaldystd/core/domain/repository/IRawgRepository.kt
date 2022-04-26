@@ -3,7 +3,6 @@ package com.naufaldystd.core.domain.repository
 import com.naufaldystd.core.data.Resource
 import com.naufaldystd.core.domain.model.Game
 import kotlinx.coroutines.flow.Flow
-import retrofit2.http.Query
 
 interface IRawgRepository {
 	fun getAllGame(): Flow<Resource<List<Game>>>

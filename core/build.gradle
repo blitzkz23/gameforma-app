@@ -18,6 +18,7 @@ android {
 
         buildConfigField("String", "RAWG_BASE_URL", "\"https://api.rawg.io/api/\"")
         buildConfigField("String", "RAWG_API_KEY", "\"a07a96102d4947b88583c551127a6247\"")
+        buildConfigField("String", "DB_NAME", "\"Rawg.db\"")
     }
 
     buildTypes {

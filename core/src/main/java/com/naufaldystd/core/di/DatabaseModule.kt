@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.naufaldystd.core.data.source.local.room.RawgDao
 import com.naufaldystd.core.data.source.local.room.RawgDatabase
+import com.naufaldystd.core.utils.Constants.DB_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +20,7 @@ class DatabaseModule {
 	@Provides
 	fun provideDatabase(@ApplicationContext context: Context): RawgDatabase = Room.databaseBuilder(
 		context,
-		RawgDatabase::class.java, "Rawg.db"
+		RawgDatabase::class.java, DB_NAME
 	).fallbackToDestructiveMigration().build()
 
 	@Provides

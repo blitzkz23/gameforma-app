@@ -5,7 +5,7 @@ import com.naufaldystd.core.data.source.remote.response.GameResponse
 import com.naufaldystd.core.domain.model.Game
 
 object DataMapper {
-	fun mapResponseToEntities(input: List<GameResponse>) : List<GameEntity> {
+	fun mapResponsesToEntities(input: List<GameResponse>) : List<GameEntity> {
 		val gameList = ArrayList<GameEntity>()
 		input.map {
 			val tags = getTagsName(it)
@@ -62,6 +62,42 @@ object DataMapper {
 		platforms = input.platforms,
 		genres = input.genres,
 	)
+
+	fun mapEntityToDomain(input: GameEntity) = Game(
+		gameId = input.gameId,
+		name = input.name,
+		rating = input.rating,
+		metacritic = input.metacritic,
+		playtime = input.playtime,
+		released = input.released,
+		backgroundImage = input.backgroundImage,
+		description = input.description,
+		esrbRating = input.esrbRating,
+		tags = input.tags,
+		platforms = input.platforms,
+		genres = input.genres,
+	)
+
+	fun mapResponseToEntity(input: GameResponse) : GameEntity {
+		val tags = getTagsName(input)
+		val platforms = getPlatformName(input)
+		val genres = getGenreName(input)
+
+		return GameEntity(
+			gameId = input.id,
+			name = input.name,
+			rating = input.rating,
+			metacritic =  input.metacritic ?: 0,
+			playtime = input.playtime,
+			released = input.released,
+			backgroundImage = input.backgroundImage,
+			description = input.descriptionRaw,
+			esrbRating = input.esrbRating?.name ?: "",
+			tags = tags,
+			platforms = platforms,
+			genres = genres,
+		)
+	}
 
 	private fun getTagsName(data: GameResponse): String {
 		val result = StringBuilder().append("")

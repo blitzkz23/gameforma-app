@@ -7,16 +7,16 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
 	private var result: Flow<Resource<ResultType>> = flow {
 		emit(Resource.Loading())
-		val dbSource = loadFromDB().first()
+		val dbSource = loadFromDB()?.first()
 		if (shouldFetch(dbSource)) {
 			emit(Resource.Loading())
 			when (val apiResponse = createCall().first()) {
 				is RawgApiResponse.Success -> {
 					saveCallResult(apiResponse.data)
-					emitAll(loadFromDB().map { Resource.Success(it) })
+					loadFromDB()?.let { data -> emitAll(data.map { Resource.Success(it) }) }
 				}
 				is RawgApiResponse.Empty -> {
-					emitAll(loadFromDB().map { Resource.Success(it) })
+					loadFromDB()?.let { data -> emitAll(data.map { Resource.Success(it) }) }
 				}
 				is RawgApiResponse.Error -> {
 					onFetchFailed()
@@ -24,13 +24,13 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 				}
 			}
 		} else {
-			emitAll(loadFromDB().map { Resource.Success(it) })
+			loadFromDB()?.let { data -> emitAll(data.map { Resource.Success(it) }) }
 		}
 	}
 
 	protected open fun onFetchFailed() {}
 
-	protected abstract fun loadFromDB(): Flow<ResultType>
+	protected abstract fun loadFromDB(): Flow<ResultType>?
 
 	protected abstract fun shouldFetch(data: ResultType?): Boolean
 
