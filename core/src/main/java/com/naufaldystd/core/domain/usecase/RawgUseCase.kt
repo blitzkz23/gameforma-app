@@ -7,5 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface RawgUseCase {
 	fun getAllGame(): Flow<Resource<List<Game>>>
 	fun getFavoriteGame(): Flow<List<Game>>
+	fun getGameDetail(id: Int): Flow<Resource<Game>>
 	fun setFavoriteGame(game: Game, state: Boolean)
+	suspend fun searchGame(query: String): Resource<List<Game>>
 }
