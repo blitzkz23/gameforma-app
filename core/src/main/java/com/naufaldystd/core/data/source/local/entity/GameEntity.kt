@@ -12,8 +12,14 @@ data class GameEntity(
 	@ColumnInfo(name = "gameId")
 	val gameId: Int,
 
+	@ColumnInfo(name = "name")
+	val name: String,
+
 	@ColumnInfo(name = "rating")
 	val rating: Double,
+
+	@ColumnInfo(name = "description")
+	val description : String,
 
 	@ColumnInfo(name = "playtime")
 	val playtime: Int,
@@ -24,11 +30,17 @@ data class GameEntity(
 	@ColumnInfo(name = "backgroundImage")
 	val backgroundImage: String,
 
-	@ColumnInfo(name = "tba")
-	val tba: Boolean,
+	@ColumnInfo(name = "esrbRating")
+	val esrbRating: String,
 
-	@ColumnInfo(name = "name")
-	val name: String,
+	@ColumnInfo(name = "tag")
+	val tags : String,
+
+	@ColumnInfo(name = "platforms")
+	val platforms : String,
+
+	@ColumnInfo(name = "genres")
+	val genres : String,
 
 	@ColumnInfo(name = "isFavorite")
 	var isFavorite: Boolean = false,

@@ -12,6 +12,9 @@ data class GameResponse(
 	@field:SerializedName("rating")
 	var rating: Double,
 
+	@SerializedName("metacritic")
+	val metacritic: Int?,
+
 	@field:SerializedName("playtime")
 	var playtime: Int,
 
@@ -21,8 +24,23 @@ data class GameResponse(
 	@field:SerializedName("background_image")
 	var backgroundImage: String,
 
-	@field:SerializedName("tba")
-	var tba: Boolean,
+	@field:SerializedName("esrb_rating")
+	val esrbRating: EsrbRatingItem?,
+
+	@field:SerializedName("tags")
+	val tags: List<TagsItem>,
+
+	@field:SerializedName("genres")
+	val genres: List<GenresItem>,
+
+	@field:SerializedName("platforms")
+	val platforms: List<PlatformsItem>,
+
+	@field:SerializedName("short_screenshots")
+	val shortScreenshots: List<ShortScreenshotsItem>,
+
+	@SerializedName("description_raw")
+	val descriptionRaw: String
 )
 
 
