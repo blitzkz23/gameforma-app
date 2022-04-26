@@ -11,11 +11,17 @@ interface RawgDao {
 	@Query("SELECT * FROM game")
 	fun getAllGame(): Flow<List<GameEntity>>
 
-	@Query("SELECT * FROM game where isFavorite = 1")
+	@Query("SELECT * FROM game WHERE isFavorite = 1")
 	fun getFavoriteGame(): Flow<List<GameEntity>>
 
+	@Query("SELECT * FROM game WHERE gameId =:id")
+	fun getGameById(id: Int): Flow<GameEntity>?
+
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	suspend fun insertGame(games: List<GameEntity>)
+	suspend fun insertGames(games: List<GameEntity>)
+
+	@Insert(onConflict = OnConflictStrategy.REPLACE)
+	suspend fun insertGame(game: GameEntity)
 
 	@Update
 	fun updateFavoriteGame(game: GameEntity)

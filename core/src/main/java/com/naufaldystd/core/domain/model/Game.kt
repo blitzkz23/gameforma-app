@@ -1,5 +1,9 @@
 package com.naufaldystd.core.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Game(
 	var gameId: Int,
 	var name: String,
@@ -14,4 +18,4 @@ data class Game(
 	var platforms: String,
 	var genres: String,
 
-	)
+	) : Parcelable

@@ -8,6 +8,7 @@ object DataMapper {
 	fun mapResponseToEntities(input: List<GameResponse>) : List<GameEntity> {
 		val gameList = ArrayList<GameEntity>()
 		input.map {
+			val tags = getTagsName(it)
 			val platforms = getPlatformName(it)
 			val genres = getGenreName(it)
 			val game = GameEntity(
@@ -20,7 +21,7 @@ object DataMapper {
 				released = it.released,
 				backgroundImage = it.backgroundImage,
 				esrbRating = it.esrbRating?.name ?: "",
-				tags = "",
+				tags = tags,
 				platforms = platforms,
 				genres = genres
 			)
@@ -61,6 +62,20 @@ object DataMapper {
 		platforms = input.platforms,
 		genres = input.genres,
 	)
+
+	private fun getTagsName(data: GameResponse): String {
+		val result = StringBuilder().append("")
+
+		for (i in data.tags.indices) {
+			if (i < data.tags.size - 1) {
+				result.append("${data.tags[i].name}, ")
+			} else {
+				result.append(data.tags[i].name)
+			}
+		}
+
+		return result.toString()
+	}
 
 	private fun getPlatformName(data: GameResponse): String {
 		val result = StringBuilder().append("")

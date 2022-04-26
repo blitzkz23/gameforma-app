@@ -13,7 +13,11 @@ class LocalDataSource @Inject constructor(private val rawgDao: RawgDao) {
 
 	fun getFavoriteGame(): Flow<List<GameEntity>> = rawgDao.getFavoriteGame()
 
-	suspend fun insertGame(gameList: List<GameEntity>) = rawgDao.insertGame(gameList)
+	fun getGameById(id: Int): Flow<GameEntity>? = rawgDao.getGameById(id)
+
+	suspend fun insertGame(gameList: List<GameEntity>) = rawgDao.insertGames(gameList)
+
+	suspend fun insertGame(game: GameEntity) = rawgDao.insertGame(game)
 
 	fun setFavoriteGame(game: GameEntity, newState: Boolean) {
 		game.isFavorite = newState
