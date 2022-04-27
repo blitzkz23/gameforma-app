@@ -2,16 +2,18 @@
     <!-- Base application theme. -->
     <style name="Theme.GameformaApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/primary_black</item>
+        <item name="colorPrimaryVariant">@color/secondary_black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:windowBackground">@color/primary_black</item>
         <!-- Customize your theme here. -->
+        <item name="android:fontFamily" tools:targetApi="1">@font/segoe_ui_regular</item>
     </style>
 
     <style name="Theme.GameformaApp.NoActionBar">
@@ -22,4 +24,71 @@
     <style name="Theme.GameformaApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.GameformaApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Base text Style -->
+    <style name="Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Header1">
+        <item name="fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+    </style>
+
+    <style name="Text.Header2">
+        <item name="fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Text.Header3">
+        <item name="fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Text.Header4">
+        <item name="fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Text.Header5">
+        <item name="fontFamily">segoe_ui_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.SubHeader1">
+        <item name="fontFamily">@font/segoe_ui_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/description_gray</item>
+    </style>
+
+    <style name="Text.SubHeader2">
+        <item name="fontFamily">@font/segoe_ui_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/description_gray</item>
+    </style>
+
+    <style name="Text.SubText">
+        <item name="fontFamily">@font/segoe_ui_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/description_gray</item>
+    </style>
+
+    <style name="Text.SubText2">
+        <item name="fontFamily">@font/segoe_ui_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.013</item>
+        <item name="android:textColor">@color/description_gray</item>
+    </style>
+
+    <style name="Text.Paragraph">
+        <item name="android:textSize">13.5sp</item>
+        <item name="fontFamily">@font/segoe_ui_regular</item>
+    </style>
 </resources>

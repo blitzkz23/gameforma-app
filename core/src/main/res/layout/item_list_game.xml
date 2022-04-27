@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_item_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:contentDescription="@string/game_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="H,1.5:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/secondary_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/top_space"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Space
+            android:id="@+id/top_space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_title"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="#FFFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_subtitle"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/game_name_placeholder" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_metascore_green"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_title">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:textColor="@color/status_green"
+                tools:text="99" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_item_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#B3FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Game's Genre" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
