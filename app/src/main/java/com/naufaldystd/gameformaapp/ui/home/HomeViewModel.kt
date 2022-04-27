@@ -1,13 +1,13 @@
 package com.naufaldystd.gameformaapp.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.naufaldystd.core.domain.usecase.RawgUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
-
-	private val _text = MutableLiveData<String>().apply {
-		value = "This is home Fragment"
-	}
-	val text: LiveData<String> = _text
+@HiltViewModel
+class HomeViewModel @Inject constructor(rawgUseCase: RawgUseCase) : ViewModel() {
+	val games = rawgUseCase.getAllGame().asLiveData()
 }
