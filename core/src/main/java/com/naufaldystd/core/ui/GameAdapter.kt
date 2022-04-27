@@ -41,7 +41,7 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 					.load(data.backgroundImage)
 					.into(ivItemImage)
 				tvItemTitle.text = data.name
-				tvItemSubtitle.text = data.genres
+				tvItemGenres.text = data.genres
 				tvMetacriticScore.text = data.metacritic.toString()
 				when (data.metacritic) {
 					in 1..50 -> {

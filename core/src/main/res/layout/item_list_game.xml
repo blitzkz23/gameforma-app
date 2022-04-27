@@ -18,7 +18,8 @@
             android:layout_height="0dp"
             android:background="@android:color/white"
             android:contentDescription="@string/game_image"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
             app:layout_constraintDimensionRatio="H,1.5:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +42,7 @@
             android:id="@+id/top_space"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_item_title"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -50,9 +51,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:fontFamily="@font/segoe_ui_bold"
             android:textColor="#FFFFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/tv_item_subtitle"
+            android:textSize="22sp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_genres"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/game_name_placeholder" />
@@ -65,12 +68,13 @@
             android:background="@drawable/bg_metascore_green"
             android:gravity="center"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/tv_item_subtitle"
+            app:layout_constraintBottom_toTopOf="@+id/tv_item_genres"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_item_title"
             app:layout_constraintTop_toTopOf="@+id/tv_item_title">
 
             <TextView
+                android:id="@+id/tv_metacritic_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/segoe_ui_bold"
@@ -80,7 +84,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_item_subtitle"
+            android:id="@+id/tv_item_genres"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
