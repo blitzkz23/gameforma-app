@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:contentDescription="@string/sheet_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_baseline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_game_release_date"
+        style="@style/Text.SubHeader1"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_white_stuff"
+        android:padding="6dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:text="MAY 18, 2015" />
+
+    <TextView
+        android:id="@+id/tv_game_playtime"
+        style="@style/Text.SubHeader1"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_game_release_date"
+        app:layout_constraintStart_toEndOf="@+id/tv_game_release_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_game_release_date"
+        tools:text="@string/playtime_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_game_title"
+        style="@style/Text.Header1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_release_date"
+        tools:text="@string/game_name_placeholder" />
+
+    <TextView
+        android:id="@+id/about"
+        style="@style/Text.Header3"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/about"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_title" />
+
+    <TextView
+        android:id="@+id/tv_game_description"
+        style="@style/Text.Paragraph"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about"
+        tools:text="@string/about" />
+
+    <TextView
+        android:id="@+id/platforms"
+        style="@style/Text.Header3"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/platforms"
+        android:textColor="@color/description_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_game_description" />
+
+    <TextView
+        android:id="@+id/tv_platforms"
+        style="@style/Text"
+        android:layout_width="180dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        tools:text="@string/platforms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/platforms" />
+
+    <TextView
+        android:id="@+id/metascore"
+        style="@style/Text.Header3"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/metascore"
+        android:textColor="@color/description_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/platforms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/platforms" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="32dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_metascore_green"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/metascore"
+        app:layout_constraintStart_toStartOf="@+id/metascore"
+        app:layout_constraintTop_toBottomOf="@+id/metascore">
+
+        <TextView
+            android:id="@+id/tv_metacritic_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="@color/status_green"
+            tools:text="99" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/age"
+        style="@style/Text.Header3"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/age_rating"
+        android:textColor="@color/description_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_platforms" />
+
+    <TextView
+        android:id="@+id/tv_age"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age"
+        tools:text="@string/age_rating" />
+
+    <TextView
+        android:id="@+id/tags"
+        style="@style/Text.Header3"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tags"
+        android:textColor="@color/description_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_age" />
+
+    <TextView
+        android:id="@+id/tv_tags"
+        style="@style/Text"
+        android:layout_width="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tags"
+        tools:text="@string/tags" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

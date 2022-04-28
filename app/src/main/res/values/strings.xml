@@ -15,4 +15,12 @@
     <string name="header_home">Explore Your Favorite Games.</string>
     <string name="search">Search</string>
     <string name="info">Info</string>
+    <string name="favorite_btn">Favorite Button</string>
+    <string name="about">About</string>
+    <string name="playtime_placeholder">AVERAGE PLAYTIME: %d hours</string>
+    <string name="platforms">Platforms</string>
+    <string name="metascore">Metascore</string>
+    <string name="age_rating">Age Rating</string>
+    <string name="tags">Tags</string>
+    <string name="sheet_line">sheet line</string>
 </resources>

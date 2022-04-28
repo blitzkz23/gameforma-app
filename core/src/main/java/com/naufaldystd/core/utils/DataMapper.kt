@@ -45,6 +45,7 @@ object DataMapper {
 				tags = it.tags,
 				platforms = it.platforms,
 				genres = it.genres,
+				isFavorite = it.isFavorite
 			)
 		}
 
@@ -76,6 +77,7 @@ object DataMapper {
 		tags = input.tags,
 		platforms = input.platforms,
 		genres = input.genres,
+		isFavorite = input.isFavorite
 	)
 
 	fun mapResponseToEntity(input: GameResponse) : GameEntity {

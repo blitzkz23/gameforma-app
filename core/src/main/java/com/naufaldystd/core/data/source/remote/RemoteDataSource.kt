@@ -34,9 +34,9 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
 	}
 
 	suspend fun getGameDetail(id: Int): Flow<RawgApiResponse<GameResponse>> {
-		return flow<RawgApiResponse<GameResponse>> {
+		return flow {
 			try {
-				val response = apiService.getGameDetail(id.toString(), API_KEY)
+				val response = apiService.getGameDetail(id, API_KEY)
 				if (response.descriptionRaw.isNotEmpty()) {
 					emit(RawgApiResponse.Success(response))
 				} else {

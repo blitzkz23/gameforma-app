@@ -17,5 +17,5 @@ data class Game(
 	var tags: String,
 	var platforms: String,
 	var genres: String,
-
+	var isFavorite: Boolean,
 	) : Parcelable

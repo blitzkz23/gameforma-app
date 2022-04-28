@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.naufaldystd.core.R
 import com.naufaldystd.core.databinding.ItemListGameBinding
 import com.naufaldystd.core.domain.model.Game
@@ -39,6 +40,7 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 			with(binding) {
 				Glide.with(itemView.context)
 					.load(data.backgroundImage)
+					.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))
 					.into(ivItemImage)
 				tvItemTitle.text = data.name
 				tvItemGenres.text = data.genres
@@ -53,6 +55,12 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 						tvMetacriticScore.setTextColor(getColor(itemView.context, R.color.status_yellow))
 					}
 				}
+			}
+		}
+
+		init {
+			binding.root.setOnClickListener {
+				onItemClick?.invoke(listGame[adapterPosition])
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 package com.naufaldystd.gameformaapp.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.naufaldystd.core.data.Resource
 import com.naufaldystd.core.ui.GameAdapter
 import com.naufaldystd.gameformaapp.databinding.FragmentHomeBinding
+import com.naufaldystd.gameformaapp.ui.detail.DetailGameActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,17 +38,22 @@ class HomeFragment : Fragment() {
 
 		if (activity != null) {
 			val gameAdapter = GameAdapter()
+			gameAdapter.onItemClick = { intentData ->
+				val intent = Intent(activity, DetailGameActivity::class.java)
+				intent.putExtra(DetailGameActivity.DATA, intentData)
+				startActivity(intent)
+			}
 
 			homeViewModel.games.observe(viewLifecycleOwner) { games ->
 				if (games != null) {
 					when (games) {
-						is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
+						is Resource.Loading -> binding.loadingAnimation.visibility = View.VISIBLE
 						is Resource.Success -> {
-							binding.progressBar.visibility = View.GONE
+							binding.loadingAnimation.visibility = View.GONE
 							gameAdapter.setData(games.data)
 						}
 						is Resource.Error -> {
-							binding.progressBar.visibility = View.GONE
+							binding.loadingAnimation.visibility = View.GONE
 						}
 					}
 				}
