@@ -20,6 +20,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/secondary_black</item>
+    </style>
+
     <style name="Theme.GameformaApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.GameformaApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

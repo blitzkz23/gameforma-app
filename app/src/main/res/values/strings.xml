@@ -17,10 +17,13 @@
     <string name="info">Info</string>
     <string name="favorite_btn">Favorite Button</string>
     <string name="about">About</string>
-    <string name="playtime_placeholder">AVERAGE PLAYTIME: %d hours</string>
+    <string name="playtime_placeholder">Average Playtime: %d hours</string>
     <string name="platforms">Platforms</string>
     <string name="metascore">Metascore</string>
     <string name="age_rating">Age Rating</string>
     <string name="tags">Tags</string>
     <string name="sheet_line">sheet line</string>
+    <string name="search_result">Search Result</string>
+    <string name="search_hint">Enter game\'s title here...</string>
+    <string name="search_hint_anim">Type on the search field to begin your search!</string>
 </resources>

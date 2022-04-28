@@ -18,8 +18,8 @@ object DataMapper {
 				metacritic = it.metacritic ?: 0,
 				description = "",
 				playtime = it.playtime,
-				released = it.released,
-				backgroundImage = it.backgroundImage,
+				released = it.released ?: "",
+				backgroundImage = it.backgroundImage ?: "",
 				esrbRating = it.esrbRating?.name ?: "",
 				tags = tags,
 				platforms = platforms,
@@ -38,8 +38,8 @@ object DataMapper {
 				rating = it.rating,
 				metacritic = it.metacritic,
 				playtime = it.playtime,
-				released = it.released,
-				backgroundImage = it.backgroundImage,
+				released = it.released.toString(),
+				backgroundImage = it.backgroundImage.toString(),
 				description = it.description,
 				esrbRating = it.esrbRating,
 				tags = it.tags,
@@ -70,8 +70,8 @@ object DataMapper {
 		rating = input.rating,
 		metacritic = input.metacritic,
 		playtime = input.playtime,
-		released = input.released,
-		backgroundImage = input.backgroundImage,
+		released = input.released.toString(),
+		backgroundImage = input.backgroundImage.toString(),
 		description = input.description,
 		esrbRating = input.esrbRating,
 		tags = input.tags,
@@ -104,11 +104,13 @@ object DataMapper {
 	private fun getTagsName(data: GameResponse): String {
 		val result = StringBuilder().append("")
 
-		for (i in data.tags.indices) {
-			if (i < data.tags.size - 1) {
-				result.append("${data.tags[i].name}, ")
-			} else {
-				result.append(data.tags[i].name)
+		if (data.tags != null) {
+			for (i in data.tags.indices) {
+				if (i < data.tags.size - 1) {
+					result.append("${data.tags[i].name}, ")
+				} else {
+					result.append(data.tags[i].name)
+				}
 			}
 		}
 
@@ -118,11 +120,13 @@ object DataMapper {
 	private fun getPlatformName(data: GameResponse): String {
 		val result = StringBuilder().append("")
 
-		for (i in data.platforms.indices) {
-			if (i < data.platforms.size - 1) {
-				result.append("${data.platforms[i].platform.name}, ")
-			} else {
-				result.append(data.platforms[i].platform.name)
+		if (data.platforms != null) {
+			for (i in data.platforms.indices) {
+				if (i < data.platforms.size - 1) {
+					result.append("${data.platforms[i].platform.name}, ")
+				} else {
+					result.append(data.platforms[i].platform.name)
+				}
 			}
 		}
 
@@ -132,11 +136,13 @@ object DataMapper {
 	private fun getGenreName(data: GameResponse): String {
 		val result = StringBuilder().append("")
 
-		for (i in data.genres.indices) {
-			if (i < data.genres.size - 1) {
-				result.append("${data.genres[i].name}, ")
-			} else {
-				result.append(data.genres[i].name)
+		if (data.genres != null) {
+			for (i in data.genres.indices) {
+				if (i < data.genres.size - 1) {
+					result.append("${data.genres[i].name}, ")
+				} else {
+					result.append(data.genres[i].name)
+				}
 			}
 		}
 

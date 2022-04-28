@@ -13,9 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameformaApp">
         <activity
-            android:name=".ui.detail.DetailGameActivity"
-            android:theme="@style/Theme.GameformaApp.NoActionBar"
+            android:name=".ui.search.SearchActivity"
             android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.detail.DetailGameActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GameformaApp.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />

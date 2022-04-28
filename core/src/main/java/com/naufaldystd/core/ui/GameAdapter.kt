@@ -46,13 +46,21 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 				tvItemGenres.text = data.genres
 				tvMetacriticScore.text = data.metacritic.toString()
 				when (data.metacritic) {
-					in 1..50 -> {
+					in 0..1 -> {
+						hideMetascore(true, binding)
+					}
+					in 2..50 -> {
 						linearLayout.background = getDrawable(itemView.context, R.drawable.bg_metascore_red)
 						tvMetacriticScore.setTextColor(getColor(itemView.context, R.color.status_red))
 					}
-					in 51..69 -> {
+					in 51..74 -> {
 						linearLayout.background = getDrawable(itemView.context, R.drawable.bg_metascore_yellow)
 						tvMetacriticScore.setTextColor(getColor(itemView.context, R.color.status_yellow))
+					}
+					in 75..100 -> {
+						hideMetascore(false, binding)
+						linearLayout.background = getDrawable(itemView.context, R.drawable.bg_metascore_green)
+						tvMetacriticScore.setTextColor(getColor(itemView.context, R.color.status_green))
 					}
 				}
 			}
@@ -62,6 +70,16 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 			binding.root.setOnClickListener {
 				onItemClick?.invoke(listGame[adapterPosition])
 			}
+		}
+	}
+
+	private fun hideMetascore(state: Boolean, binding: ItemListGameBinding) {
+		if(state) {
+			binding.linearLayout.visibility = View.GONE
+			binding.tvMetacriticScore.visibility = View.GONE
+		} else {
+			binding.linearLayout.visibility = View.VISIBLE
+			binding.tvMetacriticScore.visibility = View.VISIBLE
 		}
 	}
 }

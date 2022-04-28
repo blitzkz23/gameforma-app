@@ -72,7 +72,10 @@ class DetailGameActivity : AppCompatActivity() {
 				tvTags.text = detailGame.tags
 
 				when (detailGame.metacritic) {
-					in 1..50 -> {
+					in 0..1 -> {
+						hideMetascore(true, binding)
+					}
+					in 2..50 -> {
 						linearLayout.background = ContextCompat.getDrawable(
 							this@DetailGameActivity,
 							com.naufaldystd.core.R.drawable.bg_metascore_red
@@ -84,7 +87,7 @@ class DetailGameActivity : AppCompatActivity() {
 							)
 						)
 					}
-					in 51..69 -> {
+					in 51..74 -> {
 						linearLayout.background = ContextCompat.getDrawable(
 							this@DetailGameActivity,
 							com.naufaldystd.core.R.drawable.bg_metascore_yellow
@@ -93,6 +96,19 @@ class DetailGameActivity : AppCompatActivity() {
 							ContextCompat.getColor(
 								this@DetailGameActivity,
 								com.naufaldystd.core.R.color.status_yellow
+							)
+						)
+					}
+					in 75..100 -> {
+						hideMetascore(false, binding)
+						linearLayout.background = ContextCompat.getDrawable(
+							this@DetailGameActivity,
+							com.naufaldystd.core.R.drawable.bg_metascore_green
+						)
+						tvMetacriticScore.setTextColor(
+							ContextCompat.getColor(
+								this@DetailGameActivity,
+								com.naufaldystd.core.R.color.status_green
 							)
 						)
 					}
@@ -105,6 +121,18 @@ class DetailGameActivity : AppCompatActivity() {
 				statusFavorite = !statusFavorite
 				detailGameViewModel.setFavoriteGame(detailGame, statusFavorite)
 				setStatusFavorite(statusFavorite)
+			}
+		}
+	}
+
+	private fun hideMetascore(state: Boolean, binding: ActivityDetailBinding) {
+		contentBinding?.apply {
+			if(state) {
+				linearLayout.visibility = View.GONE
+				tvMetacriticScore.visibility = View.GONE
+			} else {
+				linearLayout.visibility = View.VISIBLE
+				tvMetacriticScore.visibility = View.VISIBLE
 			}
 		}
 	}
@@ -130,6 +158,7 @@ class DetailGameActivity : AppCompatActivity() {
 				tags.visibility = View.GONE
 			}
 		} else {
+			binding.loadingError.visibility = View.GONE
 			binding.loadingAnimation.visibility = View.GONE
 			contentBinding?.apply {
 				tvGameReleaseDate.visibility = View.VISIBLE

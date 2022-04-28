@@ -85,8 +85,21 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/dice_loading"/>
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_error"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="330dp"
+        android:visibility="gone"
+        app:layout_anchor="@id/content"
+        app:layout_anchorGravity="center|top|center_vertical"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/error_page"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_favorite"
+        app:backgroundTint="@color/status_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"

@@ -76,6 +76,7 @@ class RawgRepository @Inject constructor(
 			is RawgApiResponse.Success -> {
 				val gamesEntities = DataMapper.mapResponsesToEntities(response.data)
 				val games = DataMapper.mapEntitiesToDomain(gamesEntities)
+				localDataSource.insertGame(gamesEntities)
 				Resource.Success(games)
 			}
 			is RawgApiResponse.Error -> {

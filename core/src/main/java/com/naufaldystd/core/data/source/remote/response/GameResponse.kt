@@ -19,22 +19,22 @@ data class GameResponse(
 	var playtime: Int,
 
 	@field:SerializedName("released")
-	var released: String,
+	var released: String?,
 
 	@field:SerializedName("background_image")
-	var backgroundImage: String,
+	var backgroundImage: String?,
 
 	@field:SerializedName("esrb_rating")
 	val esrbRating: EsrbRatingItem?,
 
 	@field:SerializedName("tags")
-	val tags: List<TagsItem>,
+	val tags: List<TagsItem>?,
 
 	@field:SerializedName("genres")
-	val genres: List<GenresItem>,
+	val genres: List<GenresItem>?,
 
 	@field:SerializedName("platforms")
-	val platforms: List<PlatformsItem>,
+	val platforms: List<PlatformsItem>?,
 
 	@SerializedName("description_raw")
 	val descriptionRaw: String

@@ -28,10 +28,10 @@ data class GameEntity(
 	val playtime: Int,
 
 	@ColumnInfo(name = "released")
-	val released: String,
+	val released: String?,
 
 	@ColumnInfo(name = "backgroundImage")
-	val backgroundImage: String,
+	val backgroundImage: String?,
 
 	@ColumnInfo(name = "esrbRating")
 	val esrbRating: String,
