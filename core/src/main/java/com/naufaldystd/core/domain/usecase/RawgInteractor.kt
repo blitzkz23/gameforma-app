@@ -14,4 +14,6 @@ class RawgInteractor @Inject constructor(private val rawgRepository: RawgReposit
 	override fun setFavoriteGame(game: Game, state: Boolean) = rawgRepository.setFavoriteGame(game, state)
 
 	override suspend fun searchGame(query: String) = rawgRepository.searchGame(query)
+
+	override suspend fun insertGameDetail(game: Game) = rawgRepository.insertGameDetail(game)
 }

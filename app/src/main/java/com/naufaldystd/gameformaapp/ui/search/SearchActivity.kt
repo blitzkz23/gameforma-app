@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -46,6 +47,9 @@ class SearchActivity : AppCompatActivity() {
 		gameAdapter.onItemClick = { selectedGame ->
 			val intent = Intent(this, DetailGameActivity::class.java)
 			intent.putExtra(DetailGameActivity.DATA, selectedGame)
+			lifecycleScope.launch {
+				searchViewModel.insertGame(selectedGame)
+			}
 			startActivity(intent)
 		}
 		searchViewModel.gamesResult.observe(this) { results ->
@@ -58,6 +62,7 @@ class SearchActivity : AppCompatActivity() {
 					}
 					is Resource.Error -> {
 						Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+						Log.e("SearchActivity", "${results.message}")
 					}
 				}
 			}

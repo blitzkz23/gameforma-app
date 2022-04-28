@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/nav_favorite"
         android:name="com.naufaldystd.favorites.ui.FavoriteFragment"
-        android:label="@string/menu_favorite" />
+        android:label="@string/gameforma" />
 
     <fragment
         android:id="@+id/nav_slideshow"

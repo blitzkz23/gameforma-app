@@ -76,7 +76,6 @@ class RawgRepository @Inject constructor(
 			is RawgApiResponse.Success -> {
 				val gamesEntities = DataMapper.mapResponsesToEntities(response.data)
 				val games = DataMapper.mapEntitiesToDomain(gamesEntities)
-				localDataSource.insertGame(gamesEntities)
 				Resource.Success(games)
 			}
 			is RawgApiResponse.Error -> {
@@ -86,5 +85,10 @@ class RawgRepository @Inject constructor(
 				Resource.Error(response.toString(), null)
 			}
 		}
+	}
+
+	override suspend fun insertGameDetail(game: Game) {
+		val gameEntity = DataMapper.mapDomainToEntity(game)
+		localDataSource.insertGame(gameEntity)
 	}
 }

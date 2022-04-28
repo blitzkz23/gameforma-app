@@ -10,4 +10,5 @@ interface RawgUseCase {
 	fun getGameDetail(id: Int): Flow<Resource<Game>>
 	fun setFavoriteGame(game: Game, state: Boolean)
 	suspend fun searchGame(query: String): Resource<List<Game>>
+	suspend fun insertGameDetail(game: Game)
 }

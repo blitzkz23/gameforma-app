@@ -12,7 +12,7 @@
     <string name="menu_favorite">Favorite</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_favorites">Favorites</string>
-    <string name="header_home">Explore Your Favorite Games.</string>
+    <string name="header_home">Discover Games</string>
     <string name="search">Search</string>
     <string name="info">Info</string>
     <string name="favorite_btn">Favorite Button</string>
@@ -25,5 +25,6 @@
     <string name="sheet_line">sheet line</string>
     <string name="search_result">Search Result</string>
     <string name="search_hint">Enter game\'s title here...</string>
-    <string name="search_hint_anim">Type on the search field to begin your search!</string>
+    <string name="search_hint_anim">Type on the search field \nto begin your search!</string>
+    <string name="find_out_your_favorite_game">Find out your favorite game</string>
 </resources>

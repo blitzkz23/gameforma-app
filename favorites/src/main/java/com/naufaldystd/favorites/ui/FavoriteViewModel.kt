@@ -1,13 +1,12 @@
 package com.naufaldystd.favorites.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
+import com.naufaldystd.core.domain.usecase.RawgUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class FavoriteViewModel : ViewModel() {
-
-	private val _text = MutableLiveData<String>().apply {
-		value = "This is gallery Fragment"
-	}
-	val text: LiveData<String> = _text
+@HiltViewModel
+class FavoriteViewModel @Inject constructor(private val rawgUseCase: RawgUseCase): ViewModel() {
+	fun getFavoriteGame() = rawgUseCase.getFavoriteGame().asLiveData()
 }

@@ -46,7 +46,7 @@ class DetailGameActivity : AppCompatActivity() {
 						showGameDetail(updatedData)
 					}
 					is Resource.Error -> {
-						Toast.makeText(this, "error : ${detailGame.message}", Toast.LENGTH_SHORT)
+						Toast.makeText(this, "error: ${detailGame.message}", Toast.LENGTH_SHORT)
 							.show()
 					}
 				}

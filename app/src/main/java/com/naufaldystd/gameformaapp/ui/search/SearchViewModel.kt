@@ -17,4 +17,6 @@ class SearchViewModel @Inject constructor(private val rawgUseCase: RawgUseCase):
 	suspend fun searchGame(query: String) {
 		_gamesResult.value = rawgUseCase.searchGame(query)
 	}
+
+	suspend fun insertGame(game: Game) = rawgUseCase.insertGameDetail(game)
 }
