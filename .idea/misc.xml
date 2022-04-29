@@ -13,12 +13,14 @@
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_broken_image_black.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_error.xml" value="0.1805" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_gameforma.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_launcher_background.xml" value="0.132" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_line.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_loading.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_menu_camera.xml" value="0.132" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.132" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.132" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_refresh.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_refresh_black.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/ic_unfavorite.xml" value="0.2275" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/drawable/purplish_color.xml" value="0.2275" />
@@ -36,6 +38,7 @@
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/layout/nav_header_main.xml" value="0.18885869565217392" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/menu/activity_main_drawer.xml" value="0.31614583333333335" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/menu/main.xml" value="0.31614583333333335" />
+        <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/app/src/main/res/menu/search.xml" value="0.31614583333333335" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/core/src/main/res/drawable/bg_metascore_red.xml" value="0.2" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/core/src/main/res/drawable/bg_metascore_yellow.xml" value="0.219" />
         <entry key="..\:/Dicoding/Android Path/android-developer-expert/submission/submission1/core/src/main/res/drawable/custom_bg_metascore_green.xml" value="0.219" />

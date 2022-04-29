@@ -99,7 +99,6 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_favorite"
-        app:backgroundTint="@color/status_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="48dp"
@@ -107,6 +106,7 @@
         android:backgroundTint="@color/white"
         android:contentDescription="@string/favorite_btn"
         android:src="@drawable/ic_unfavorite"
+        app:tint="@color/pinkish_purple"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|center_vertical"
         tools:ignore="SpeakableTextPresentCheck" />

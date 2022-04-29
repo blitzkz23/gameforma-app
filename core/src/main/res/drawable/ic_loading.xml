@@ -9,7 +9,7 @@
 
     <item
         android:bottom="20dp"
-        android:drawable="@drawable/ic_refresh_black"
+        android:drawable="@drawable/ic_refresh"
         android:left="20dp"
         android:right="20dp"
         android:top="20dp" />

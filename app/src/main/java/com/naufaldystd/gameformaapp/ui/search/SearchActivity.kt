@@ -2,7 +2,6 @@ package com.naufaldystd.gameformaapp.ui.search
 
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,15 +19,21 @@ import com.naufaldystd.gameformaapp.R
 import com.naufaldystd.gameformaapp.databinding.ActivitySearchBinding
 import com.naufaldystd.gameformaapp.ui.detail.DetailGameActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
+@ExperimentalCoroutinesApi
+@FlowPreview
 class SearchActivity : AppCompatActivity() {
 	private val binding: ActivitySearchBinding by lazy {
 		ActivitySearchBinding.inflate(layoutInflater)
 	}
 	private val searchViewModel: SearchViewModel by viewModels()
 
+	@OptIn(ObsoleteCoroutinesApi::class)
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
@@ -52,7 +58,8 @@ class SearchActivity : AppCompatActivity() {
 			}
 			startActivity(intent)
 		}
-		searchViewModel.gamesResult.observe(this) { results ->
+
+		searchViewModel.searchResult.observe(this) { results ->
 			if (results != null) {
 				when (results) {
 					is Resource.Loading -> showLoading(true)
@@ -85,9 +92,8 @@ class SearchActivity : AppCompatActivity() {
 
 			override fun afterTextChanged(p0: Editable?) {
 				showLoading(false)
-				val query = p0.toString().trim()
 				lifecycleScope.launch {
-					searchViewModel.searchGame(query)
+					searchViewModel.queryChannel.send(p0.toString())
 				}
 			}
 

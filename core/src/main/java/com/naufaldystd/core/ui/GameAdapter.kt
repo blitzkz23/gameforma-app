@@ -40,7 +40,7 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 			with(binding) {
 				Glide.with(itemView.context)
 					.load(data.backgroundImage)
-					.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_loading))
+					.apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
 					.into(ivItemImage)
 				tvItemTitle.text = data.name
 				tvItemGenres.text = data.genres
