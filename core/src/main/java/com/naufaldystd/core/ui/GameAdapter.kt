@@ -5,12 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getDrawable
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.naufaldystd.core.R
 import com.naufaldystd.core.databinding.ItemListGameBinding
 import com.naufaldystd.core.domain.model.Game
+import com.naufaldystd.core.utils.DiffUtils
 
 class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 
@@ -19,9 +21,11 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 
 	fun setData(newListData: List<Game>?) {
 		if (newListData == null) return
+		val diffUtilCallback = DiffUtils(listGame, newListData)
+		val diffResult = DiffUtil.calculateDiff(diffUtilCallback)
 		listGame.clear()
 		listGame.addAll(newListData)
-		notifyDataSetChanged()
+		diffResult.dispatchUpdatesTo(this)
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameAdapter.ListViewHolder =
@@ -82,4 +86,5 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ListViewHolder>() {
 			binding.tvMetacriticScore.visibility = View.VISIBLE
 		}
 	}
+
 }

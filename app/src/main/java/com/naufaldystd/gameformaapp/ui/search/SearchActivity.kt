@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.naufaldystd.core.data.Resource
@@ -102,20 +102,13 @@ class SearchActivity : AppCompatActivity() {
 	}
 
 	private fun showSearchHint(state: Boolean) {
-		if (state) {
-			binding.beginSearch.visibility = View.VISIBLE
-			binding.searchHintAnim.visibility = View.VISIBLE
-		} else {
-			binding.beginSearch.visibility = View.GONE
-			binding.searchHintAnim.visibility = View.GONE
-		}
+		binding.beginSearch.isVisible = state
+		binding.searchHintAnim.isVisible = state
 	}
 
+
 	private fun showLoading(state: Boolean) {
-		if (state) {
-			binding.searchLoading.visibility = View.VISIBLE
-		} else {
-			binding.searchLoading.visibility = View.GONE
-		}
+		binding.searchLoading.isVisible = state
+		binding.searchLoading.isVisible = state
 	}
 }

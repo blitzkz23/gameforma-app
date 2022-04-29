@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import com.naufaldystd.gameformaapp.databinding.ActivityMainBinding
 import com.naufaldystd.gameformaapp.ui.search.SearchActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,10 +33,11 @@ class MainActivity : AppCompatActivity() {
 
 		val drawerLayout: DrawerLayout = binding.drawerLayout
 		val navView: NavigationView = binding.navView
-		val navController = findNavController(R.id.nav_host_fragment_content_main)
 
-		// Passing each menu ID as a set of Ids because each
-		// menu should be considered as top level destinations.
+		// To find nav controller from FragmentContainerView need to use findFragmentById first
+		val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+		val navController = navHostFragment.navController
+
 		appBarConfiguration = AppBarConfiguration(
 			setOf(
 				R.id.nav_home, R.id.nav_favorite, R.id.nav_slideshow
