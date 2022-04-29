@@ -1,20 +1,12 @@
 <resources>
     <string name="app_name">Gameforma App</string>
     <string name="gameforma">Gameforma</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
+    <string name="nav_header_desc">Navigation Header</string>
     <string name="menu_home">Home</string>
     <string name="menu_favorite">Favorite</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="title_favorites">Favorites</string>
     <string name="header_home">Discover Games</string>
     <string name="search">Search</string>
-    <string name="info">Info</string>
     <string name="favorite_btn">Favorite Button</string>
     <string name="about">About</string>
     <string name="playtime_placeholder">Average Playtime: %d hours</string>
@@ -24,7 +16,8 @@
     <string name="tags">Tags</string>
     <string name="sheet_line">sheet line</string>
     <string name="search_result">Search Result</string>
-    <string name="search_hint">Enter game\'s title here...</string>
     <string name="search_hint_anim">Type on the search field \nto begin your search!</string>
     <string name="find_out_your_favorite_game">Find out your favorite game</string>
+    <string name="added_fav">This game have been added to favorite</string>
+    <string name="removed_fav">This game have been removed from favorite</string>
 </resources>

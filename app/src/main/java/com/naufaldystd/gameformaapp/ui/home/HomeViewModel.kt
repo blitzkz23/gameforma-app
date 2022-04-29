@@ -1,10 +1,9 @@
 package com.naufaldystd.gameformaapp.ui.home
 
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.naufaldystd.core.domain.usecase.RawgUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel

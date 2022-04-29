@@ -73,7 +73,7 @@ class DetailGameActivity : AppCompatActivity() {
 
 				when (detailGame.metacritic) {
 					in 0..1 -> {
-						hideMetascore(true, binding)
+						hideMetascore(true)
 					}
 					in 2..50 -> {
 						linearLayout.background = ContextCompat.getDrawable(
@@ -100,7 +100,7 @@ class DetailGameActivity : AppCompatActivity() {
 						)
 					}
 					in 75..100 -> {
-						hideMetascore(false, binding)
+						hideMetascore(false)
 						linearLayout.background = ContextCompat.getDrawable(
 							this@DetailGameActivity,
 							com.naufaldystd.core.R.drawable.bg_metascore_green
@@ -121,11 +121,16 @@ class DetailGameActivity : AppCompatActivity() {
 				statusFavorite = !statusFavorite
 				detailGameViewModel.setFavoriteGame(detailGame, statusFavorite)
 				setStatusFavorite(statusFavorite)
+				if(statusFavorite) {
+					Toast.makeText(this@DetailGameActivity, getString(R.string.added_fav), Toast.LENGTH_SHORT).show()
+				} else {
+					Toast.makeText(this@DetailGameActivity, getString(R.string.removed_fav), Toast.LENGTH_SHORT).show()
+				}
 			}
 		}
 	}
 
-	private fun hideMetascore(state: Boolean, binding: ActivityDetailBinding) {
+	private fun hideMetascore(state: Boolean) {
 		contentBinding?.apply {
 			if(state) {
 				linearLayout.visibility = View.GONE
