@@ -60,7 +60,17 @@ class FavoriteFragment : Fragment() {
 		super.onViewCreated(view, savedInstanceState)
 		val gameAdapter = GameAdapter()
 		favoriteViewModel.getFavoriteGame().observe(viewLifecycleOwner) { favoriteGames ->
-			gameAdapter.setData(favoriteGames)
+			if (favoriteGames.isEmpty()) {
+				binding.favLoading.visibility = View.VISIBLE
+				binding.noFav.visibility = View.VISIBLE
+				binding.rvFavorite.visibility = View.GONE
+			} else {
+				binding.rvFavorite.visibility = View.VISIBLE
+				binding.favLoading.visibility = View.GONE
+				binding.noFav.visibility = View.GONE
+				gameAdapter.setData(favoriteGames)
+			}
+
 		}
 
 		gameAdapter.onItemClick = { intentData ->
