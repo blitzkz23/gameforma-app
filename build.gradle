@@ -60,13 +60,6 @@ plugins {
     id 'com.android.dynamic-feature' version '7.1.0' apply false
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
