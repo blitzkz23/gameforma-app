@@ -20,6 +20,11 @@ android {
         buildConfigField("String", "RAWG_API_KEY", "\"a07a96102d4947b88583c551127a6247\"")
         buildConfigField("String", "DB_NAME", "\"Rawg.db\"")
         buildConfigField("String", "PASSPHRASE", "\"gameforma\"")
+        buildConfigField("String", "HOSTNAME", "\"api.rawg.io\"")
+        buildConfigField("String", "PIN_A", "\"sha256/+WSYXXW0rd5TnILDGuJvshU5aExcOMlLxvQBPOT4PS0=\"")
+        buildConfigField("String", "PIN_B", "\"sha256/hS5jJ4P+iQUErBkvoWBQOd1T7VOAYlOVegvv1iMzpxA=\"")
+        buildConfigField("String", "PIN_C", "\"sha256/RI9CUmPUOpUk2vdVMSZDWj+wtoQO5k9MSCSM9w4grmU=\"")
+        buildConfigField("String", "PIN_D", "\"sha256/FEzVOUp4dF3gI0ZVPRJhFbSJVXR+uQmMH65xhs1glH4=\"")
     }
 
     buildTypes {
