@@ -20,10 +20,6 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">@color/secondary_black</item>
-    </style>
-
     <style name="Theme.GameformaApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.GameformaApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
@@ -52,16 +48,6 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="Text.Header4">
-        <item name="fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="Text.Header5">
-        <item name="fontFamily">poppins_bold</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
     <style name="Text.SubHeader1">
         <item name="fontFamily">@font/poppins_medium</item>
         <item name="android:textSize">16sp</item>
@@ -72,20 +58,6 @@
     <style name="Text.SubHeader2">
         <item name="fontFamily">@font/poppins_regular</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:letterSpacing">-0.013</item>
-        <item name="android:textColor">@color/description_gray</item>
-    </style>
-
-    <style name="Text.SubText">
-        <item name="fontFamily">@font/segoe_ui_regular</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:letterSpacing">-0.013</item>
-        <item name="android:textColor">@color/description_gray</item>
-    </style>
-
-    <style name="Text.SubText2">
-        <item name="fontFamily">@font/poppins_regular</item>
-        <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">-0.013</item>
         <item name="android:textColor">@color/description_gray</item>
     </style>

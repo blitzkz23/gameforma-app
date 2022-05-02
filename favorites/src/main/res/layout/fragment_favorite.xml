@@ -46,7 +46,7 @@
     <TextView
         android:id="@+id/no_fav"
         style="@style/Text.Header3"
-        android:text="@string/you_dont_have_favorited_game_yet"
+        android:text="@string/you_haven_t_favorited_any_game_yet"
         android:textAlignment="center"
         android:layout_marginTop="16dp"
         android:visibility="invisible"
