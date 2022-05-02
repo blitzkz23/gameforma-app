@@ -36,6 +36,7 @@ buildscript {
     ext.ken_burns_version = '1.0.7'
 
     ext.lottie_version = '4.2.0'
+    ext.shimmer_version = "0.5.0"
 
     repositories {
         google()

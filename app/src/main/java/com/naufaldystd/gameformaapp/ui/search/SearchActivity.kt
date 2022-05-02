@@ -33,6 +33,7 @@ class SearchActivity : AppCompatActivity() {
 	}
 	private val searchViewModel: SearchViewModel by viewModels()
 
+
 	@OptIn(ObsoleteCoroutinesApi::class)
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -86,7 +87,8 @@ class SearchActivity : AppCompatActivity() {
 			}
 
 			override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-				showSearchHint(false)
+				binding.searchHintAnim.isVisible = false
+				binding.tvSearchHintAnim.isVisible = false
 				showLoading(true)
 			}
 
@@ -101,14 +103,7 @@ class SearchActivity : AppCompatActivity() {
 
 	}
 
-	private fun showSearchHint(state: Boolean) {
-		binding.beginSearch.isVisible = state
-		binding.searchHintAnim.isVisible = state
-	}
-
-
 	private fun showLoading(state: Boolean) {
-		binding.searchLoading.isVisible = state
 		binding.searchLoading.isVisible = state
 	}
 }

@@ -14,4 +14,5 @@
     <color name="status_yellow">#FFF8C651</color>
     <color name="status_red">#FFD61C1C</color>
     <color name="placeholder">#6FB6B6B6</color>
+    <color name="shimmer_gray1">#DDDDDD</color>
 </resources>
