@@ -7,5 +7,6 @@ object Constants {
 	const val API_KEY = BuildConfig.RAWG_API_KEY
 	const val DB_NAME = BuildConfig.DB_NAME
 	const val EXTRA_DATA = "extra_data"
+	const val PASSPHRASE = BuildConfig.PASSPHRASE
 
 }

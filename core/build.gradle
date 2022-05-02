@@ -19,6 +19,7 @@ android {
         buildConfigField("String", "RAWG_BASE_URL", "\"https://api.rawg.io/api/\"")
         buildConfigField("String", "RAWG_API_KEY", "\"a07a96102d4947b88583c551127a6247\"")
         buildConfigField("String", "DB_NAME", "\"Rawg.db\"")
+        buildConfigField("String", "PASSPHRASE", "\"gameforma\"")
     }
 
     buildTypes {
@@ -58,8 +59,13 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
     implementation "androidx.room:room-ktx:$room_version"
 
+    //effects
     implementation "com.airbnb.android:lottie:$lottie_version"
     implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    //encryption
+    implementation "net.zetetic:android-database-sqlcipher:$sql_cipher_version"
+    implementation "androidx.sqlite:sqlite-ktx:$sqlite_ktx_version"
 
     api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     api "androidx.activity:activity-ktx:$activity_ktx_version"
