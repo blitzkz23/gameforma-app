@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Gameforma App</string>
     <string name="gameforma">Gameforma</string>
     <string name="nav_header_desc">Navigation Header</string>
@@ -9,7 +9,7 @@
     <string name="search">Search</string>
     <string name="favorite_btn">Favorite Button</string>
     <string name="about">About</string>
-    <string name="playtime_placeholder">Average Playtime: %d hours</string>
+    <string name="playtime_placeholder" tools:ignore="PluralsCandidate">Average Playtime: %d hours</string>
     <string name="platforms">Platforms</string>
     <string name="metascore">Metascore</string>
     <string name="age_rating">Age Rating</string>

@@ -20,7 +20,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"
-                tools:replace="android:value"/>
+                tools:replace="android:value" />
         </activity>
         <activity
             android:name=".ui.detail.DetailGameActivity"
@@ -29,7 +29,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"
-                tools:replace="android:value"/>
+                tools:replace="android:value" />
         </activity>
         <activity
             android:name=".MainActivity"

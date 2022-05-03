@@ -64,6 +64,7 @@ dependencies {
     //retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    //noinspection GradleDependency
     api "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
 
     //coroutine
