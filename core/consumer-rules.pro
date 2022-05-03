@@ -79,12 +79,8 @@ public *;
 
 -optimizationpasses 5
 -dontusemixedcaseclassnames
--dontskipnonpubliclibraryclasses
--dontskipnonpubliclibraryclassmembers
 -verbose
--dontpreverify
 -allowaccessmodification
--mergeinterfacesaggressively
 -overloadaggressively
 -keepattributes *Annotation*
 

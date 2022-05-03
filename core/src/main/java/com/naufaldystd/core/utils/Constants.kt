@@ -1,8 +1,6 @@
 package com.naufaldystd.core.utils
 
 import com.naufaldystd.core.BuildConfig
-import com.naufaldystd.core.utils.Constants.HOSTNAME
-import com.naufaldystd.core.utils.Constants.PIN_A
 
 object Constants {
 	const val BASE_URL = BuildConfig.RAWG_BASE_URL
