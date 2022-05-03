@@ -54,6 +54,7 @@ class HomeFragment : Fragment() {
 						is Resource.Error -> {
 							Toast.makeText(context, "error ${games.message}", Toast.LENGTH_SHORT).show()
 							binding.loadingAnimation.visibility = View.GONE
+							binding.errorMessage.visibility = View.VISIBLE
 						}
 					}
 				}
