@@ -37,3 +37,18 @@ jobs:
       - store_artifacts:  
           path: app/build/outputs/apk/debug/
           destination: artifact-fil
+      - run:
+          name: Run Unit Test
+          command: ./gradlew testDebug
+      - store_test_results:
+          path: app/build/test-results
+      - store_artifacts:
+          path: app/build/outputs/junit
+      - run:
+          name: Run Android Test
+          command: ./gradlew connectedDebugAndroidTest
+          system-image: system-images;android-30;google_apis;x86
+      - store_test_results:
+          path: app/build/test-results
+      - store_artifacts:
+          path: app/build/outputs/junit
