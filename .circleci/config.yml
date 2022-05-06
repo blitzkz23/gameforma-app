@@ -2,7 +2,8 @@ version: 2.1
  
 orbs:
   android: circleci/android@0.2.1
- 
+  snyk: snyk/snyk@1.1.2
+
 jobs:
   build:
     executor: android/android
@@ -44,4 +45,7 @@ jobs:
           path: app/build/test-results
       - store_artifacts:
           path: app/build/outputs/junit
+      - run:
+          name: Run Vulnerability Check
+          command: snyk/scan-iac
 
