@@ -48,4 +48,6 @@ jobs:
       - run:
           name: Check vulnerability
           command: vulnerability-checker/scan
+          directory:
+            default: "."
 
