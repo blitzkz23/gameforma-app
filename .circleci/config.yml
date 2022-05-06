@@ -84,3 +84,10 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
+
+workflows:
+  test-and-build:
+    jobs:
+      - build
+      - unit-test
+      - android-test
