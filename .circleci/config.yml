@@ -2,7 +2,6 @@ version: 2.1
  
 orbs:
   android: circleci/android@0.2.1
-  snyk: snyk/snyk@1.1.2
 
 jobs:
   build:
@@ -45,5 +44,4 @@ jobs:
           path: app/build/test-results
       - store_artifacts:
           path: app/build/outputs/junit
-      - snyk/scan-iac
 
