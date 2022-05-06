@@ -44,8 +44,8 @@ jobs:
       resource-class: xlarge
     steps:
       - checkout
-      - android/restore-gradle-cache
-      - android/restore-build-cache
+      - android/restore_gradle_cache
+      - android/restore_build_cache
       - android/run-tests:
           test-command: ./gradlew testDebug
       - android/save-gradle-cache
