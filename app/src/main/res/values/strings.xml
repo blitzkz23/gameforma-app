@@ -18,8 +18,8 @@
     <string name="search_result">Search Result</string>
     <string name="search_hint_anim">Type on the search field \nto begin your search!</string>
     <string name="find_out_your_favorite_game">Find out your favorite game</string>
-    <string name="added_fav">This game have been added to favorite</string>
-    <string name="removed_fav">This game have been removed from favorite</string>
+    <string name="added_fav">This game have been added to favorite.</string>
+    <string name="removed_fav">This game have been removed from favorite.</string>
     <string name="gameforma_about">Gameforma is a game database application which have 722,222 data of games currently.\nData shown in this application are provided by RAWG\'s public API.</string>
     <string name="learn_more">Learn More</string>
     <string name="network_error_please_try_again_later">Network error, please try again later</string>
