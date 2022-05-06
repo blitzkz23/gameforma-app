@@ -45,5 +45,7 @@ jobs:
           path: app/build/test-results
       - store_artifacts:
           path: app/build/outputs/junit
-      - vulnerability-checker
+      - run:
+          name: Check vulnerability
+          command: vulnerability-checker/scan
 
