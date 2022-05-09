@@ -5,6 +5,8 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
         android:id="@+id/text_home"
         style="@style/Text.Header2"
         android:layout_marginStart="16dp"
@@ -44,6 +46,8 @@
         app:lottie_rawRes="@raw/wolverine" />
 
     <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
         android:id="@+id/no_fav"
         style="@style/Text.Header3"
         android:text="@string/you_haven_t_favorited_any_game_yet"
